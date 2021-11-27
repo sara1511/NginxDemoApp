@@ -14,7 +14,7 @@ variables:
   imageRepository: 'nginxdemoapp'
   containerRegistry: 'nodefnappregistry.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: 'latest'
+  tag: '$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
