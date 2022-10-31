@@ -7,4 +7,4 @@ eval $(printenv | sed -n "s/^\([^=]\+\)=\(.*\)$/export \1=\2/p" | sed 's/"/\\\"/
 echo "Starting SSH ..."
 /usr/sbin/sshd
 
-nginx -g daemon off
+#nginx -g daemon off
