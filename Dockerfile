@@ -1,12 +1,12 @@
 FROM nginx:alpine
+
 WORKDIR /app/
 
 RUN mkdir -p /app/files/
 
 COPY ./ /app/
-
 COPY sshd_config /etc/ssh/
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/
 
 # Start and enable SSH
 RUN apk add openssh \
@@ -17,4 +17,4 @@ RUN apk add openssh \
 
 EXPOSE 80 2222
 
-ENTRYPOINT [ "/app/init_container.sh" ] 
+ENTRYPOINT [ "/app/init_container.sh" ]
