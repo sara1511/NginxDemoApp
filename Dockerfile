@@ -1,6 +1,4 @@
 FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
-
 WORKDIR /app/
 
 RUN mkdir -p /app/files/
@@ -8,6 +6,7 @@ RUN mkdir -p /app/files/
 COPY ./ /app/
 
 COPY sshd_config /etc/ssh/
+COPY index.html /usr/share/nginx/html/index.html
 
 # Start and enable SSH
 RUN apk add openssh \
